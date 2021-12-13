@@ -51,5 +51,9 @@
     - Define a function that will return generated tokens: <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">token_response</span>
     - Define a function that will sign the token: <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">signJWT</span>
      - Define a function that will decode a token: <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">decodeJWT</span>
+
+### User Registration and Login
+- Wire up the routes, schemas, and helpers for handling user registration and login.
+- Add a new Pydantic schema to <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">fastapi_jwt.app.models</span>
 ----------------------------------------------------------------------------
 <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;"></span>
