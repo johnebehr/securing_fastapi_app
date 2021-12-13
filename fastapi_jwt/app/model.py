@@ -27,7 +27,7 @@ class UserSchema(BaseModel):
             }
         }
 
-class UserLoginScchema(BaseModel):
+class UserLoginSchema(BaseModel):
     email: EmailStr = Field(...)
     password: str = Field(...)
 
