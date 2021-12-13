@@ -55,5 +55,8 @@
 ### User Registration and Login
 - Wire up the routes, schemas, and helpers for handling user registration and login.
 - Add a new Pydantic schema to <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">fastapi_jwt.app.models</span>
+- Update the imports in <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">fastapi_jwt.app.api</span>
+- Add the user registration route
+    - In production environment, make sure to hash your password with bcrypt or passlib before saving the user to the database.
 ----------------------------------------------------------------------------
 <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;"></span>

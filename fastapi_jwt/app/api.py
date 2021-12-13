@@ -1,6 +1,7 @@
-from fastapi import FastAPI 
+from fastapi import FastAPI, Body 
 
-from fastapi_jwt.app.model import PostSchema
+from fastapi_jwt.app.model import PostSchema, UserSchema, UserLoginScchema
+from fastapi_jwt.app.auth.auth_handler import signJWT
 
 posts = [
     {
@@ -44,3 +45,10 @@ async def add_post(post: PostSchema) -> dict:
     return {
         "data": "post added"
     }
+
+@app.post("/usr/signup", tags=["user"])
+async def create_user(user: UserSchema = Body(...)): 
+    # Replace with db call makeing sure to hash the password first
+    users.append(user) 
+
+    return signJWT(user.email)

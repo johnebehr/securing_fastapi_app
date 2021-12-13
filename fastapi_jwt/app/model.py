@@ -13,6 +13,20 @@ class PostSchema(BaseModel):
             }
         }
 
+class UserSchema(BaseModel):
+    fullname: str = Field(...)
+    email: EmailStr = Field(...)
+    password: str = Field(...)
+
+    class Config:
+        schema_extra = {
+            "example": {
+                "fullname": "Abdulazeez Abdula", 
+                "email": "abdulazeez@x.com", 
+                "password": "weakpassword"
+            }
+        }
+
 class UserLoginScchema(BaseModel):
     email: EmailStr = Field(...)
     password: str = Field(...)

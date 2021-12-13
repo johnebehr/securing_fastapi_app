@@ -2,10 +2,14 @@ import time
 from typing import Dict 
 
 import jwt 
-from decouple import config 
+from fastapi_jwt.app.util.settings import settings
 
-JWT_SECRET = config("edd85cfad0ebf288263854d4279d0d22f717fd4a35b45c6f85af45c40ed50611") 
-JWT_ALGORITHM = config("HS256")
+# JWT_SECRET = config("edd85cfad0ebf288263854d4279d0d22f717fd4a35b45c6f85af45c40ed50611") 
+# JWT_ALGORITHM = config("HS256")
+# JWT_SECRET = os.environ["JWT_SECRET"]
+# JWT_ALGORITHM = os.environ["JWT_ALGORITHM"]
+JWT_SECRET = settings.JWT_SECRET 
+JWT_ALGORITHM = settings.JWT_ALGORITHM
 
 # Helper function for returning generated tokens
 def token_response(token: str) -> dict:
