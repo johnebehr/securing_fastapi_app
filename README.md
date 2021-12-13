@@ -30,5 +30,8 @@
   2 directories, 8 files
   ```
   - In <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">main.py</span> define an entrypoint for the app
+
+### Adding Pydantic models (Schemas)
+- Add pydantic schemas for data validation to <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">fastapi-jwt.app.model</span>
 ----------------------------------------------------------------------------
 <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;"></span>
