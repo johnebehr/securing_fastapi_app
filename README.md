@@ -33,5 +33,8 @@
 
 ### Adding Pydantic models (Schemas)
 - Add pydantic schemas for data validation to <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">fastapi-jwt.app.model</span>
+
+### Defining the routes
+- Start by importing <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">PostSchema</span> then adding a list of dummy posts and an empty user list variable
 ----------------------------------------------------------------------------
 <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;"></span>
