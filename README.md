@@ -38,5 +38,15 @@
 - Start by importing <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">PostSchema</span> then adding a list of dummy posts and an empty user list variable
     - Add some GET routes to read the fake posts
     - Add a POST route for creating a new post
+
+### JWT Authentication
+- Create a JWT token handler and a class to handle bearer tokens 
+- Add the following libraries:
+    - <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">PyJWT==1.7.1</span>
+    - <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">python-decouple==3.3</span>
+        - Used for reading environment variables
+- JWT Handler
+    - The JWT handler will be responsible for signing, encoding, decoding, and returning JWT tokens
+    - Add a new module <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">app.auth.auth_handler</span>
 ----------------------------------------------------------------------------
 <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;"></span>
