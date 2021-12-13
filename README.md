@@ -48,7 +48,8 @@
 - JWT Handler
     - The JWT handler will be responsible for signing, encoding, decoding, and returning JWT tokens
     - Add a new module <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">app.auth.auth_handler</span>
-    - Add a function that will return generated tokens: <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">token_response</span>
-    - Add a function that will sign the token: <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">signJWT</span>
+    - Define a function that will return generated tokens: <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">token_response</span>
+    - Define a function that will sign the token: <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">signJWT</span>
+     - Define a function that will decode a token: <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">decodeJWT</span>
 ----------------------------------------------------------------------------
 <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;"></span>
