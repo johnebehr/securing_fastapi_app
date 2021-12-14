@@ -60,5 +60,18 @@
     - In production environment, make sure to hash your password with bcrypt or passlib before saving the user to the database.
 - Add a helper function to check if a user exists: <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">check_user</span>
 - Then define the login route
+
+### Securing Routes 
+- Now, you can protect the route, by checking whether the request is authorized or not. This is done by scanning the request for the JWT in the `Authorization` header. 
+- FastAPI provides the basic validation via the `HTTPBearer` class. This class is uesed to extract and parse the token. 
+- Then verify the token using the <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">decodeJWT</span> function. 
+- Add <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">fastapi_jwt.app.auth.auth_bearer</span>
+    - The `JWTBearer` class is a subclass of FastAPI's HTTPBearer class that will be used to persist authentication on the routes
+    - The <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">\_\_init__</span> method enables automatic error reporting by setting the boolean `auto_error` to True.
+    - In the <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">\_\_call__</span> you define a variable called `credentials` of type `HTTPAuthorizationCredentials`, which is created with the `JWTBearer` class is invoked. You then proceed to check if the credentials passed in during the course of invoking the class are valid:
+        - If the credential scheme isn't a bearer scheme, raise an exception for an invalid token scheme.
+        - If a bearer token is passed, verify that the JWT is valid 
+        - If no credential are received, raise an invalid authorization error.
+    - The <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">\_\_verify_jwt__</span> method verifies whether a token is valid. The method takes a `jwttoken` string which it then passes to the `decodeJWT` function and returns a boolean value based on the outcome of `decodeJWT` 
 ----------------------------------------------------------------------------
 <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;"></span>
