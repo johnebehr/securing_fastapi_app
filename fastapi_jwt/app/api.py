@@ -1,4 +1,5 @@
-from fastapi import FastAPI, Body 
+from fastapi import FastAPI, Body, Depends
+from fastapi_jwt.app.auth.auth_bearer import JWTBearer
 
 from fastapi_jwt.app.model import PostSchema, UserSchema, UserLoginSchema
 from fastapi_jwt.app.auth.auth_handler import signJWT
@@ -25,7 +26,7 @@ def check_user(data: UserLoginSchema):
 async def read_root() -> dict:
     return {"message": "Welcome to your blog!"}
 
-@app.get("/posts", tags=["posts"])
+@app.get("/posts", dependencies=[Depends(JWTBearer())], tags=["posts"])
 async def get_posts() -> dict:
     return { "data": posts }
 
@@ -64,3 +65,5 @@ async def user_login(user: UserLoginSchema = Body(...)):
     if check_user(user):
         return signJWT(user.email)
     return {"error": "Wrong login details!"}
+
+    

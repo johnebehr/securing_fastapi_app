@@ -73,5 +73,9 @@
         - If a bearer token is passed, verify that the JWT is valid 
         - If no credential are received, raise an invalid authorization error.
     - The <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;">\_\_verify_jwt__</span> method verifies whether a token is valid. The method takes a `jwttoken` string which it then passes to the `decodeJWT` function and returns a boolean value based on the outcome of `decodeJWT` 
+- Dependency Injection 
+    - To secure the routes, you'll leverage dependency injection via FasAPI's `Depends`
+    - Update imports by adding the `JWTBearer` and `Depends`
+        
 ----------------------------------------------------------------------------
 <span style="font: 1.3rem Inconsolata, monospace; font-size:1.10em;"></span>
